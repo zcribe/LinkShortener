@@ -1,5 +1,12 @@
 {% extends 'base.html' %}
 
+{% block title %}URLShortener{% endblock title %}
+
 {% block main %}
+    <form id="shortenerForm">
+        <label for="link-generator-input"></label>
+        <input type="text" id="link-generator-input">
+        <button></button>
+    </form>
 
 {% endblock main %}
