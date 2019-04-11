@@ -46,15 +46,21 @@ class NewVisitorTest(unittest.TestCase):
         self.assertEqual(button_content, 'Submit')
 
         # He is invited to paste in a link and click a button
-        self.fail()
+        input_box = self.browser.find_element_by_tag_name('input')
+        self.assertEqual(input_box.get_attribute('placeholder'), 'Insert a link you want to shorten')
 
         # He pastes in a link and clicks on a button
+        input_box.send_keys('https://www.neti.ee/')
 
-        # He is redirected to a new page.
+        # When he hits Enter he is redirected to a new page.
+        input_box.send_keys(Keys.ENTER)
+        time.sleep(5)
 
         # He sees the title of the page
+        self.assertIn('Your Link', self.browser.title)
 
         # He notices a generated link
+        self.fail()
 
         # He copies it and then visits it to check it.
 
