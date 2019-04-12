@@ -1,6 +1,5 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
 from django.http import HttpResponseRedirect
-from django.views.decorators.http import require_POST
 from .forms import LinkGeneratorForm
 from .models import RedirectorModel
 from .helper import random_slugger
