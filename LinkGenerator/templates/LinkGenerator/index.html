@@ -6,7 +6,10 @@
     <form id="shortenerForm" method="post">
         {% csrf_token %}
         {{ form }}
-        <input type="submit" value="Submit">
+        <button type="submit" class="btn btn-primary">Send</button>
+        {% if error %}
+            <div class="form-group has-error"></div>
+        {% endif %}
     </form>
 
 

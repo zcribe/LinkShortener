@@ -9,3 +9,11 @@ class LinkGeneratorFormTest(TestCase):
 
         self.assertIn('placeholder="Insert a link you want to shorten"', form.as_p())
         self.assertIn('class="form-control input-lg"', form.as_p())
+
+    def test_form_validation_for_blank_items(self):
+        form = LinkGeneratorForm(data={'text': ''})
+        self.assertFalse(form.is_valid())
+        self.assertEqual(
+            form.errors['original_link'],
+            ['This field is required.']
+        )
