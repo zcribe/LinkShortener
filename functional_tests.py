@@ -67,12 +67,4 @@ class NewVisitorTest(unittest.TestCase):
         # He sees that the original link is the same one he entered into the form
         self.assertEqual(TEST_LINK, original_link)
 
-        # He copies it and then visits it to check it.
-        self.browser.get(generated_link)
-        generated_title = self.browser.title
-        self.browser.get(original_link)
-        original_title = self.browser.title
-
-        self.assertEqual(generated_title, original_title)
-
         # He is happy with the service provided and closes the browser.
