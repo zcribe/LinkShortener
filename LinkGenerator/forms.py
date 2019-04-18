@@ -19,6 +19,7 @@ class LinkGeneratorForm(forms.models.ModelForm):
             'original_link' : forms.fields.TextInput(attrs={
                 'placeholder': 'Insert a link you want to shorten.',
                 'class': 'form-control input-lg',
+                'id': 'link-generator-input'
             })
         }
 

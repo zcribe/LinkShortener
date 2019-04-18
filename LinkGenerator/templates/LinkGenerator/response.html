@@ -3,8 +3,8 @@
 {% block main %}
 
 <h5>Old and scruffy</h5>
-<a href="{{ original_link }}">{{ original_link }}</a>
+<a id="original-link" href="{{ original_link }}">{{ original_link }}</a>
 
 <h5>New and shortened link</h5>
-<a href="http://127.0.0.1:8000/re/{{ lil_slug }}">http://http://127.0.0.1:8000/re/{{ lil_slug }}</a>
+<a id="shortened-link" href="http://127.0.0.1:8000/re/{{ lil_slug }}">http://http://127.0.0.1:8000/re/{{ lil_slug }}</a>
 {% endblock main %}
