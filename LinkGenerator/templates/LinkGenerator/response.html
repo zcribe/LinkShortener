@@ -1,13 +1,25 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}
     Your Link
 {% endblock title %}
 {% block main %}
 
-<h5>Old and scruffy</h5>
-<a id="original-link" href="{{ original_link }}">{{ original_link }}</a>
+    <div class="hero">
+        <div class="columns form-group">
+            <div class="column">
+                <span class="box">
+                    <h5 class="label">Old and scruffy</h5>
+                    <a id="original-link" href="{{ original_link }}">{{ original_link }}</a>
+                </span>
+                <span class="box">
+                    <h5 class="label">New and shortened link</h5>
+                    <a id="shortened-link" href="http://127.0.0.1:8000/re/{{ lil_slug }}">http://http://127.0.0.1:8000/re/{{ lil_slug }}</a>
+                </span>
+            </div>
+        </div>
+    </div>
 
-<h5>New and shortened link</h5>
-<a id="shortened-link" href="http://127.0.0.1:8000/re/{{ lil_slug }}">http://http://127.0.0.1:8000/re/{{ lil_slug }}</a>
+
 {% endblock main %}

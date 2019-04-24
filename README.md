@@ -9,4 +9,3 @@ Obvious glaring flaws:
 * Generates a new DB entry for every new entry not every new link.
 * Links do not deprecate.
 * Token generation is very basic.
-* UI is garbage.

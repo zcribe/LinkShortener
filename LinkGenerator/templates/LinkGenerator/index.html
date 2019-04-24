@@ -1,16 +1,26 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}URLShortener{% endblock title %}
 
 {% block main %}
-    <form id="shortenerForm" method="post">
-        {% csrf_token %}
-        {{ form }}
-        <button type="submit" class="btn btn-primary">Send</button>
-        {% if error %}
-            <div class="form-group has-error"></div>
-        {% endif %}
-    </form>
+    <div class="hero">
+        <div class="columns form-group">
+            <div class="column">
+                <form id="shortenerForm" method="post">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <label class="label" for="{{ field.name }}">{{ field.label }}</label>
+                        {{ field }}
+                    {% endfor %}
+                    <button type="submit" class="submit button is-rounded">Send</button>
+                    {% if error %}
+                        <div class="form-group has-error"></div>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </div>
 
 
 {% endblock main %}
